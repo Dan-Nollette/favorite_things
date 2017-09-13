@@ -5,8 +5,14 @@ require('./lib/item')
 
 
 get('/') do
+  Item.clear
   @list = Item.all()
   erb(:list)
+end
+
+get('/items/:id') do
+  @item = Item.find(params[:id])
+  erb(:item)
 end
 
 post('/') do
