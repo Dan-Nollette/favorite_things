@@ -67,4 +67,18 @@ describe("Item") do
       expect(item.rank).to(eq(3))
     end
   end
+  describe(".duplicate?") do
+    it("checks if inputted rank has duplicate") do
+      item = Item.new("tacos", "2")
+      item.save()
+      expect(Item.duplicate?(2)).to(eq(true))
+    end
+  end
+  describe(".duplicate?") do
+    it("checks if inputted rank has duplicate") do
+      item = Item.new("tacos", "1")
+      item.save()
+      expect(Item.duplicate?(4)).to(eq(false))
+    end
+  end
 end

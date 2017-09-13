@@ -13,6 +13,15 @@ class Item
     @@list
   end
 
+  def self.duplicate?(rank)
+    @@list.each do |item|
+      if item.rank  == rank
+        return true
+      end
+    end
+    false
+  end
+
   def self.find(id)
     item_id = id.to_i()
     @@list.each do |item|
