@@ -7,7 +7,7 @@ class Item
   end
 
   def self.all()
-    @@list = []
+    @@list
   end
 
   def self.find(name)
