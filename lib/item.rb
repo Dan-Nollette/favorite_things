@@ -13,6 +13,10 @@ class Item
     @@list
   end
 
+  def self.sort()
+    @@list.sort {|first_item, second_item| first_item.rank <=> second_item.rank }
+  end
+
   def self.duplicate?(name, rank)
     @@list.each do |item|
       if item.rank  == rank || item.name == name
