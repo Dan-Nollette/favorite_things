@@ -13,9 +13,9 @@ class Item
     @@list
   end
 
-  def self.duplicate?(rank)
+  def self.duplicate?(name, rank)
     @@list.each do |item|
-      if item.rank  == rank
+      if item.rank  == rank || item.name == name
         return true
       end
     end
