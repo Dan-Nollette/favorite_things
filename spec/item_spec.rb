@@ -14,3 +14,12 @@ describe("Item#save") do
     expect(Item.all()).to(eq([item]))
   end
 end
+
+describe("Item.clear") do
+  it("clears all items from the list") do
+    item = Item.new("tacos")
+    item.save()
+    Item.clear()
+    expect(Item.all()).to(eq([]))
+  end
+end
