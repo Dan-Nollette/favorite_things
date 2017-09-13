@@ -1,10 +1,11 @@
 class Item
   @@list = []
-  attr_reader :id
+  attr_reader :id, :rank
   attr_accessor :name
 
-  def initialize(name)
+  def initialize(name, rank)
     @name = name
+    @rank = rank.to_i
     @id = @@list.length + 1
   end
 
