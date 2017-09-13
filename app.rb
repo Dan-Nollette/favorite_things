@@ -6,7 +6,7 @@ require('./lib/item')
 
 get('/') do
   Item.clear
-  @list = Item.all()
+  @list = Item.sort()
   erb(:list)
 end
 
@@ -22,6 +22,6 @@ post('/') do
     item = Item.new(name, rank)
     item.save()
   end
-  @list = Item.all()
+  @list = Item.sort()
   erb(:list)
 end
