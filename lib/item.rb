@@ -12,4 +12,8 @@ class Item
 
   def self.find(name)
   end
+
+  def save()
+    @@list.push(self)
+  end
 end
