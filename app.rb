@@ -17,9 +17,11 @@ end
 
 post('/') do
   name = params["name"]
-  rank = params["rank"]
-  item = Item.new(name, rank)
-  item.save()
+  rank = params["rank"].to_i
+  unless (Item.duplicate?(name, rank) || rank < 1 || name == "")
+    item = Item.new(name, rank)
+    item.save()
+  end
   @list = Item.all()
   erb(:list)
 end
